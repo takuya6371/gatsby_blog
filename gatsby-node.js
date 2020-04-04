@@ -10,7 +10,8 @@ exports.createPages = async gatsbyNodeHelpers => {
         edges {
           node {
             frontmatter {
-              slug
+              slug,
+              date
             }
           }
         }
@@ -23,7 +24,8 @@ exports.createPages = async gatsbyNodeHelpers => {
       path: node.frontmatter.slug,
       component: path.resolve(`./src/templates/post.js`),
       context: {
-        slug: node.frontmatter.slug
+        slug: node.frontmatter.slug,
+        date: node.frontmatter.date
       }
     })
   })
