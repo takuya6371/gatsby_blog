@@ -10,15 +10,15 @@ public_folder: /images/uploads
 collections:
   - name: 'blog'
     label: 'Blog'
-    folder: 'src/markdown-pages/{{fields.caterory1}}/{{fields.caterory2}}/{{fields.caterory3}}/'
+    folder: 'src/markdown-pages/'
     create: true
-    slug: '{{year}}-{{month}}-{{day}}_{{title}}_'
+    slug: '{{fields.caterory1}}/{{fields.caterory2}}/{{fields.caterory3}}/{{year}}-{{month}}-{{day}}_{{title}}_'
     fields:
       - { label: 'Template Key', name: 'templateKey', widget: 'hidden', default: 'blog-post' }
       - { label: 'Slug', name: 'slug', widget: 'string' }
       - { label: 'Caterory1', name: 'caterory1', widget: 'string' }
-      - { label: 'Caterory2', name: 'caterory2', widget: 'string' }
-      - { label: 'Caterory3', name: 'caterory3', widget: 'string' }
+      - { label: 'Caterory2', name: 'caterory2', widget: 'string', required: 'false' }
+      - { label: 'Caterory3', name: 'caterory3', widget: 'string', required: 'false' }
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Publish Date', name: 'date', widget: 'datetime' }
       - { label: 'Body', name: 'body', widget: 'markdown' }
