@@ -10,12 +10,13 @@ public_folder: /images/uploads
 collections:
   - name: 'blog'
     label: 'Blog'
-    folder: 'src/markdown-pages/{{tag}}'
+    folder: 'src/markdown-pages/{{tags}}'
     create: true
     slug: 'test/{{year}}-{{month}}-{{day}}_{{title}}_{{some_other_field}}'
     fields:
       - { label: 'Template Key', name: 'templateKey', widget: 'hidden', default: 'blog-post' }
       - { label: 'Slug', name: 'slug', widget: 'string' }
+      - { label: 'Caterory1', name: 'caterory1', widget: 'string' }
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Publish Date', name: 'date', widget: 'datetime' }
       - { label: 'Body', name: 'body', widget: 'markdown' }
