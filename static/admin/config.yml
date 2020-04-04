@@ -15,7 +15,6 @@ collections:
     slug: '{{year}}-{{month}}-{{day}}_{{hour}}_{{minute}}_{{second}}'
     fields:
       - { label: 'Template Key', name: 'templateKey', widget: 'hidden', default: 'blog-post' }
-      - { label: 'Slug', name: 'slug', widget: 'string' }
       - { label: 'Caterory1', name: 'caterory1', widget: 'text' }
       - { label: 'Caterory2', name: 'caterory2', widget: 'text', optional: true, default: '' }
       - { label: 'Caterory3', name: 'caterory3', widget: 'text', optional: true, default: '' }
