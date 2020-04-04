@@ -15,9 +15,10 @@ collections:
     slug: '{{year}}-{{month}}-{{day}}_{{hour}}_{{minute}}_{{second}}'
     fields:
       - { label: 'Template Key', name: 'templateKey', widget: 'hidden', default: 'blog-post' }
-      - { label: 'Caterory1', name: 'caterory1', widget: 'text' }
-      - { label: 'Caterory2', name: 'caterory2', widget: 'text', optional: true, default: '' }
-      - { label: 'Caterory3', name: 'caterory3', widget: 'text', optional: true, default: '' }
+      - { label: 'Slug', name: 'slug', widget: 'string' }
+      - { label: 'category1', name: 'category1', widget: 'text' }
+      - { label: 'category2', name: 'category2', widget: 'text', optional: true, default: '' }
+      - { label: 'category3', name: 'category3', widget: 'text', optional: true, default: '' }
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Publish Date', name: 'date', widget: 'datetime' }
       - { label: 'Body', name: 'body', widget: 'markdown' }

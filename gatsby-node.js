@@ -11,7 +11,8 @@ exports.createPages = async gatsbyNodeHelpers => {
           node {
             frontmatter {
               slug,
-              date
+              date,
+              category1
             }
           }
         }
@@ -29,4 +30,16 @@ exports.createPages = async gatsbyNodeHelpers => {
       }
     })
   })
+  result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+    createPage({
+      path: node.frontmatter.slug,
+      component: path.resolve(`./src/pages/category.js`),
+      context: {
+        slug: node.frontmatter.slug,
+        date: node.frontmatter.date,
+        category1: node.frontmatter.category1
+      }
+    })
+  })
 }
+
