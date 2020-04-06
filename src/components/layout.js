@@ -6,7 +6,7 @@
  */
 
 //import React from "react"
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import Header from "./header"
@@ -32,13 +32,12 @@ const Layout = ({ children }) => {
     }
   `)
   
-console.log(dataTitle)
 console.log(children)
 // 
 const classes = useStyles();
   return (
     <>
-      <Header siteTitle="dataTitle" />
+      <Header siteTitle={dataTitle.site.siteMetadata.title} />
       <div>
         <main className={classes.main}>{children}</main>
         <footer>

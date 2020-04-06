@@ -19,7 +19,14 @@ const useStyles = makeStyles((theme) => ({
   },
   tags : {
     color: `green`,
-  }
+    fontSize: `18px`,
+  },
+  except: {
+    fontSize: `18px`,
+  },
+  time: {
+    fontSize: `18px`,
+  },
 }));
 
 
@@ -28,17 +35,20 @@ const IndexPage = ({data}) => {
   return (
     <Layout>
       <div className={classes.article_list_dev}>
-        <h1></h1>
         {data.allMarkdownRemark.edges.map(({ node }) => (
-          <Link to={`/${node.frontmatter.slug}`} className={classes.title}>
             <article key={node.frontmatter.slug}　className={classes.article}>
-                {node.frontmatter.title}
-                <p>{node.excerpt}</p>
-                <p className={classes.tags}>#{node.frontmatter.tags}</p>
-                <time dateTime={node.frontmatter.date}>{node.frontmatter.date}</time>
+              <Link to={`/${node.frontmatter.slug}`} className={classes.title}>
+                <p>{node.frontmatter.title}</p>
+                <p className={classes.except}>{node.excerpt}</p>
+                <time className={classes.time} dateTime={node.frontmatter.date}>{node.frontmatter.date}</time>
+              </Link>
+              <p className={classes.tags}>
+                {Object.values(node.frontmatter.tags).map(tag => (
+                  <span>#{tag}&nbsp;&nbsp;&nbsp;</span>
+                ))}
+              </p>
             </article>
-          </Link>
-        ))}
+      ))}
       </div>
 
     </Layout>

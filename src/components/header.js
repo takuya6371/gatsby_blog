@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     float: `left`,
-    marginTop: `0px`,
+    marginTop: `5px`,
     marginBottom: `0px`,
   },
   header: {
@@ -95,6 +95,7 @@ console.log(data)
             style={{
               color: `white`,
               textDecoration: `none`,
+              fontSize: `30px`,
             }}
           >
             {siteTitle}
