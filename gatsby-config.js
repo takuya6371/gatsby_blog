@@ -5,6 +5,7 @@ module.exports = {
     author: `@gatsbyjs`,
   },
   plugins: [
+    `react-hooks`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -34,4 +35,10 @@ module.exports = {
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
   ],
+  /*
+  rules: {
+    // ...
+    `react-hooks/rules-of-hooks": error`, // Checks rules of Hooks
+    `react-hooks/exhaustive-deps": warn` // Checks effect dependencies
+  }  */
 }
