@@ -1,7 +1,10 @@
 ---
-title: "投稿1"
-date: "2020-01-01"
-slug: "post1"
+slug: post1
+category1: test
+category2: test
+category3: test
+title: test投稿1
+date: '2020-01-01'
 tags:
   - 投稿１
 ---
