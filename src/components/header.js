@@ -1,3 +1,4 @@
+/*
 import { Link, graphql, useStaticQuery } from "gatsby"
 import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
@@ -55,18 +56,13 @@ function search(event, list) {
     }
   });
   console.log(return_list)
-/*
-  useEffect(() => {
-    console.log("query")
-  });
-*/
   //console.log(data)
 }
 
 const Header = ({ siteTitle }) => {
 //export default ({ siteTitle, props }) => {
   const classes = useStyles();
-/*
+
   const query = useStaticQuery(graphql`
   query {
     allMarkdownRemark (sort: { fields: [frontmatter___date], order: DESC }) {
@@ -83,7 +79,7 @@ const Header = ({ siteTitle }) => {
 `)
 const [data, setData] = useState(query);
 console.log(data)
-*/
+
   return(
     <header
       className={classes.header}
@@ -108,7 +104,7 @@ console.log(data)
             className={classes.input}
             placeholder="Please input keyword"
             inputProps={{ 'aria-label': 'search google maps' }}
-//            onChange={(event) => {search(event, data.allMarkdownRemark.edges)}}
+            onChange={(event) => {search(event, data.allMarkdownRemark.edges)}}
           />
           <IconButton type="" className={classes.iconButton} aria-label="search">
             <SearchIcon />
@@ -119,6 +115,49 @@ console.log(data)
     </header>
   )
 }
+
+Header.propTypes = {
+  siteTitle: PropTypes.string,
+}
+
+Header.defaultProps = {
+  siteTitle: ``,
+}
+
+export default Header
+*/
+import { Link } from "gatsby"
+import PropTypes from "prop-types"
+import React from "react"
+
+const Header = ({ siteTitle }) => (
+  <header
+    style={{
+      background: `rebeccapurple`,
+      marginBottom: `1.45rem`,
+    }}
+  >
+    <div
+      style={{
+        margin: `0 auto`,
+        maxWidth: 960,
+        padding: `1.45rem 1.0875rem`,
+      }}
+    >
+      <h1 style={{ margin: 0 }}>
+        <Link
+          to="/"
+          style={{
+            color: `white`,
+            textDecoration: `none`,
+          }}
+        >
+          {siteTitle}
+        </Link>
+      </h1>
+    </div>
+  </header>
+)
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
