@@ -101,6 +101,17 @@ console.log(data)
           </Link>
         </h1>
       </div>
+      <Paper component="form" className={classes.search_article}>
+          <InputBase
+            className={classes.input}
+            placeholder="Please input keyword"
+            inputProps={{ 'aria-label': 'search google maps' }}
+            onChange={(event) => {search(event, data.allMarkdownRemark.edges)}}
+          />
+          <IconButton type="" className={classes.iconButton} aria-label="search">
+            <SearchIcon />
+          </IconButton>
+        </Paper>
     </header>
   )
 }
@@ -118,17 +129,6 @@ export default Header
 
 
 
-        <Paper component="form" className={classes.search_article}>
-          <InputBase
-            className={classes.input}
-            placeholder="Please input keyword"
-            inputProps={{ 'aria-label': 'search google maps' }}
-            onChange={(event) => {search(event, data.allMarkdownRemark.edges)}}
-          />
-          <IconButton type="" className={classes.iconButton} aria-label="search">
-            <SearchIcon />
-          </IconButton>
-        </Paper>
 
 
 
