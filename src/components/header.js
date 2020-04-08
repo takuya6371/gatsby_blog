@@ -2,6 +2,10 @@
 import { Link, graphql, useStaticQuery } from "gatsby"
 import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
+import Paper from '@material-ui/core/Paper';
+import InputBase from '@material-ui/core/InputBase';
+import IconButton from '@material-ui/core/IconButton';
+import SearchIcon from '@material-ui/icons/Search';
 import PropTypes from "prop-types"
 
 const useStyles = makeStyles((theme) => ({
@@ -112,10 +116,6 @@ Header.defaultProps = {
 export default Header
 /*
 
-import Paper from '@material-ui/core/Paper';
-import InputBase from '@material-ui/core/InputBase';
-import IconButton from '@material-ui/core/IconButton';
-import SearchIcon from '@material-ui/icons/Search';
 
 
         <Paper component="form" className={classes.search_article}>
