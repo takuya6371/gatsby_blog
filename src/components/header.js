@@ -2,10 +2,6 @@
 import { Link, graphql, useStaticQuery } from "gatsby"
 import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
-import InputBase from '@material-ui/core/InputBase';
-import IconButton from '@material-ui/core/IconButton';
-import SearchIcon from '@material-ui/icons/Search';
 import PropTypes from "prop-types"
 
 const useStyles = makeStyles((theme) => ({
@@ -99,18 +95,6 @@ console.log(data)
             {siteTitle}
           </Link>
         </h1>
-        <Paper component="form" className={classes.search_article}>
-          <InputBase
-            className={classes.input}
-            placeholder="Please input keyword"
-            inputProps={{ 'aria-label': 'search google maps' }}
-            onChange={(event) => {search(event, data.allMarkdownRemark.edges)}}
-          />
-          <IconButton type="" className={classes.iconButton} aria-label="search">
-            <SearchIcon />
-          </IconButton>
-        </Paper>
-
       </div>
     </header>
   )
@@ -126,6 +110,27 @@ Header.defaultProps = {
 
 export default Header
 /*
+
+import Paper from '@material-ui/core/Paper';
+import InputBase from '@material-ui/core/InputBase';
+import IconButton from '@material-ui/core/IconButton';
+import SearchIcon from '@material-ui/icons/Search';
+
+
+        <Paper component="form" className={classes.search_article}>
+          <InputBase
+            className={classes.input}
+            placeholder="Please input keyword"
+            inputProps={{ 'aria-label': 'search google maps' }}
+            onChange={(event) => {search(event, data.allMarkdownRemark.edges)}}
+          />
+          <IconButton type="" className={classes.iconButton} aria-label="search">
+            <SearchIcon />
+          </IconButton>
+        </Paper>
+
+
+
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
