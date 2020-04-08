@@ -1,4 +1,4 @@
-/*
+
 import { Link, graphql, useStaticQuery } from "gatsby"
 import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
@@ -125,7 +125,7 @@ Header.defaultProps = {
 }
 
 export default Header
-*/
+/*
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
@@ -168,3 +168,4 @@ Header.defaultProps = {
 }
 
 export default Header
+*/
