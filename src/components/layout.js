@@ -4,7 +4,7 @@
  *
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
-/*
+
 //import React from "react"
 import React from 'react';
 import PropTypes from "prop-types"
@@ -52,22 +52,17 @@ Layout.propTypes = {
 }
 
 export default Layout
-*/
+
 /**
  * Layout component that queries for data
  * with Gatsby's useStaticQuery component
  *
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
-
+/*
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
-import Paper from '@material-ui/core/Paper';
-import InputBase from '@material-ui/core/InputBase';
-import IconButton from '@material-ui/core/IconButton';
-import SearchIcon from '@material-ui/icons/Search';
-
 import Header from "./header"
 import "./layout.css"
 
@@ -108,3 +103,4 @@ Layout.propTypes = {
 }
 
 export default Layout
+*/
