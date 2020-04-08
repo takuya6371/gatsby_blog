@@ -1,3 +1,7 @@
+a:hover .list_title{
+  background-color: azure;
+}
+
 html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;

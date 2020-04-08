@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { graphql, Link } from "gatsby"
 import Layout from "../components/layout"
 import { makeStyles } from '@material-ui/core/styles';
-import useArticles from '../components/useArticles';
+//import useArticles from '../components/useArticles';
 
 const useStyles = makeStyles((theme) => ({
   title: {
@@ -23,9 +23,15 @@ const useStyles = makeStyles((theme) => ({
   },
   except: {
     fontSize: `18px`,
+    marginBottom: `0.45rem`,
   },
   time: {
     fontSize: `18px`,
+  },
+  div_list: {
+    '&:hover': {
+      backgroundColor: `#cbeccb`,
+    }
   },
 }));
 
@@ -37,11 +43,13 @@ const IndexPage = ({data}) => {
       <div className={classes.article_list_dev}>
         {data.allMarkdownRemark.edges.map(({ node }) => (
             <article key={node.frontmatter.slug}　className={classes.article}>
-              <Link to={`/${node.frontmatter.slug}`} className={classes.title}>
-                <p>{node.frontmatter.title}</p>
-                <p className={classes.except}>{node.excerpt}</p>
-                <time className={classes.time} dateTime={node.frontmatter.date}>{node.frontmatter.date}</time>
-              </Link>
+              <div className={classes.div_list}>
+                <Link to={`/${node.frontmatter.slug}`} className={classes.title}>
+                  <p>{node.frontmatter.title}</p>
+                  <p className={classes.except}>{node.excerpt}</p>
+                </Link>
+              </div>
+              <time className={classes.time} dateTime={node.frontmatter.date}>{node.frontmatter.date}</time>
               <p className={classes.tags}>
                 {Object.values(node.frontmatter.tags).map(tag => (
                   <span>#{tag}&nbsp;&nbsp;&nbsp;</span>

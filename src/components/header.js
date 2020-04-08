@@ -1,5 +1,5 @@
 import { Link, graphql, useStaticQuery } from "gatsby"
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import InputBase from '@material-ui/core/InputBase';
@@ -66,6 +66,7 @@ function search(event, list) {
 const Header = ({ siteTitle }) => {
 //export default ({ siteTitle, props }) => {
   const classes = useStyles();
+/*
   const query = useStaticQuery(graphql`
   query {
     allMarkdownRemark (sort: { fields: [frontmatter___date], order: DESC }) {
@@ -82,6 +83,7 @@ const Header = ({ siteTitle }) => {
 `)
 const [data, setData] = useState(query);
 console.log(data)
+*/
   return(
     <header
       className={classes.header}
@@ -106,7 +108,7 @@ console.log(data)
             className={classes.input}
             placeholder="Please input keyword"
             inputProps={{ 'aria-label': 'search google maps' }}
-            onChange={(event) => {search(event, data.allMarkdownRemark.edges)}}
+//            onChange={(event) => {search(event, data.allMarkdownRemark.edges)}}
           />
           <IconButton type="" className={classes.iconButton} aria-label="search">
             <SearchIcon />
