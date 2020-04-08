@@ -1,4 +1,4 @@
-/*
+
 import React from 'react';
 import { graphql, Link } from "gatsby"
 import Layout from "../components/layout"
@@ -82,7 +82,8 @@ export const query = graphql`
   }
 `
 export default IndexPage
-*/
+
+/*
 import React from "react"
 import { graphql, Link } from "gatsby"
 
@@ -123,3 +124,4 @@ export const query = graphql`
 `
 
 export default IndexPage
+*/
