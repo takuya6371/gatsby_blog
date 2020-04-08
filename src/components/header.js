@@ -25,6 +25,7 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: `1.45rem`,
     position: `fixed`,
     width: `100%`,
+    height: `60px`,
     paddingBottom: `0px`,
     //background: `linear-gradient(to right, rgb(0, 65, 106), rgb(121, 159, 12), rgb(255, 224, 0))`,
     background: `linear-gradient(to right, rgb(22, 160, 133), rgb(244, 208, 63))`,
