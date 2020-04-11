@@ -7,51 +7,9 @@ import InputBase from '@material-ui/core/InputBase';
 import IconButton from '@material-ui/core/IconButton';
 import SearchIcon from '@material-ui/icons/Search';
 import PropTypes from "prop-types"
+import "./layout.css"
 
 const useStyles = makeStyles((theme) => ({
-  search_article: {
-    padding: '0px 3px',
-    display: 'flex',
-    alignItems: 'center',
-    width: 270,
-    height: 35,
-    borderRadius: `25px`,
-    float: `right`,
-    marginTop: `20px`,
-  },
-  title: {
-    float: `left`,
-    marginTop: `5px`,
-    marginBottom: `0px`,
-  },
-  subtitle: {
-    color:`white`,
-  },
-  header: {
-    zIndex: `100`,
-    // background: `rebeccapurple`,
-    marginBottom: `1.45rem`,
-    position: `fixed`,
-    display: `flow-root`,
-    width: `100%`,
-    height: `80px`,
-    paddingBottom: `0px`,
-    //background: `linear-gradient(to right, rgb(0, 65, 106), rgb(121, 159, 12), rgb(255, 224, 0))`,
-    background: `linear-gradient(to right, rgb(22, 160, 133), rgb(244, 208, 63))`,
-  },
-  header_dev: {
-    paddingLeft: `10px`,
-    paddingRight: `10px`,
-    display: `grid`,
-    float: `left`,
-  },
-  input: {
-    marginLeft: theme.spacing(1),
-    flex: 1,
-  },
-  iconButton: {
-    padding: 10,
-  },
 }));
 
 function search(event, list) {
@@ -90,12 +48,12 @@ console.log(data)
 
   return(
     <header
-      className={classes.header}
+      className='header'
     >
     <div
-      className={classes.header_dev}
+      className='header_dev'
     >
-        <h1 className={classes.title}>
+        <h1 className='title'>
           <Link
             to="/"
             style={{
@@ -107,19 +65,23 @@ console.log(data)
             {siteTitle}
           </Link>
         </h1>
-        <p className={classes.subtitle}>{subtitle}</p>
+        <p className='subtitle'>{subtitle}</p>
       </div>
-      <Paper component="form" className={classes.search_article}>
-          <InputBase
-            className={classes.input}
-            placeholder="Not yet activated"
-            inputProps={{ 'aria-label': 'search google maps' }}
-            onChange={(event) => {search(event, data.allMarkdownRemark.edges)}}
-          />
-          <IconButton type="" className={classes.iconButton} aria-label="search">
-            <SearchIcon />
-          </IconButton>
-        </Paper>
+      <div className='form_dev'>
+        <span>
+          <Paper component="form" className='search_article search_article_locate'>
+            <InputBase
+              className='input'
+              placeholder="Not yet activated"
+              inputProps={{ 'aria-label': 'search google maps' }}
+              onChange={(event) => {search(event, data.allMarkdownRemark.edges)}}
+            />
+            <IconButton type="" className='iconButton' aria-label="search">
+              <SearchIcon />
+            </IconButton>
+          </Paper>
+        </span>
+      </div>
     </header>
   )
 }

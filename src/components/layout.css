@@ -616,12 +616,113 @@ pre tt:before,
 pre tt:after {
   content: "";
 }
+
+.search_article {
+  padding: 0px 3px;
+  display: flex;
+  align-items: center;
+  width: 270px;
+  height: 35px;
+  border-radius: 25px !important;
+}
+.search_article_locate {
+  float: right;
+  margin-top: 20px;
+}
+
+.title {
+  float: left;
+  margin-top: 5px;
+  margin-bottom: 0px;
+}
+.subtitle {
+  color:white;
+}
+.header {
+  z-index: 100;
+  margin-bottom: 1.45rem;
+  position: fixed;
+  display: flow-root;
+  width: 100%;
+  height: 80px;
+  padding-bottom: 0px;
+  background: linear-gradient(to right, rgb(22, 160, 133), rgb(244, 208, 63));
+}
+.header_dev {
+  padding-left: 10px;
+  padding-right: 10px;
+  display: grid;
+  float: left;
+}
+.input {
+  margin-left: spacing(1);
+  flex: 1;
+  padding-left: 15px;
+}
+.iconButton {
+  padding: 10;
+}
+
+
+.contents_dev {
+  margin-right: 20%;
+  margin-top: 35px;
+}
+.post_dev {
+  padding-top: 120px;
+}
+.post_title {
+  display: grid;
+}
+
+
+@media only screen and (max-width: 710px) {
+  .header {
+    z-index: 100;
+    margin-bottom: 0px;
+    position: fixed;
+    display: flow-root;
+    width: 100%;
+    height: 120px;
+    padding-bottom: 0px;
+    background: linear-gradient(to right, rgb(22, 160, 133), rgb(244, 208, 63));
+  }
+  .search_article {
+    padding: 0px 3px;
+    display: flex;
+    align-items: center;
+    width: 70%;
+    height: 35px;
+    border-radius: 25px !important;
+  }
+    
+  .search_article_locate {
+    float: none;
+    margin-top: 0px;
+  }
+  .title {
+    margin-bottom: 0px;
+    float: none;
+    text-align: center;  
+  }
+  .header_dev {
+    padding-left: 10px;
+    padding-right: 10px;
+    display: grid;
+    float: none;
+  }
+  .subtitle {
+    color:white;
+    text-align: center;  
+    margin-bottom: 0px;
+  }
+  
+}
 @media only screen and (max-width: 480px) {
   html {
     font-size: 100%;
   }
 }
-
 
 #stars {
 	content:"e";
@@ -696,9 +797,6 @@ pre tt:after {
     transform: translateY(-2000px);
   }
 }
-
-
-
 
 @keyframes fadeIn {
   from { opacity: 0; }

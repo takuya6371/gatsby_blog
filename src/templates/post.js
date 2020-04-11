@@ -23,10 +23,12 @@ export default ({ data }) => {
   const post = data.markdownRemark
   return (
     <Layout>
-      <div className={classes.title}>
-        <h1>{post.frontmatter.title}</h1><br></br>
-      </div>
+      <div className='contents_dev post_dev'>
+        <div className='post_title'>
+          <h1>{post.frontmatter.title}</h1><br></br>
+        </div>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
+      </div>
     </Layout>
   )
 }

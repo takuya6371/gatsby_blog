@@ -4,6 +4,7 @@ import { graphql, Link } from "gatsby"
 import Layout from "../components/layout"
 import { makeStyles } from '@material-ui/core/styles';
 //import useArticles from '../components/useArticles';
+import Subheader from "../components/subheader"
 
 const useStyles = makeStyles((theme) => ({
   title: {
@@ -41,7 +42,8 @@ const IndexPage = ({data}) => {
   const classes = useStyles();
   return (
     <Layout>
-      <div className={classes.article_list_dev}>
+      <Subheader className={classes.subheader}/>
+      <div className='contents_dev'>
         {data.allMarkdownRemark.edges.map(({ node }) => (
             <article key={node.frontmatter.slug}　className={classes.article}>
               <div className={classes.div_list}>
