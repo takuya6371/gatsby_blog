@@ -1,12 +1,14 @@
 module.exports = {
   siteMetadata: {
-    title: `牛乳は血液だ`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
+    title: `Qiver Tree Forest`,
+    subtitle: `水のない厳しい世界でも生き延びたいエンジニアのブログ`,
+    description: ``,
     author: `@gatsbyjs`,
   },
   plugins: [
     `react-hooks`,
     `gatsby-plugin-material-ui`,
+    //`gatsby-background-image`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -14,6 +16,13 @@ module.exports = {
         name: `markdown`,
         path: `${__dirname}/src/markdown-pages`,
       },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+        options: {
+          name: `images`,
+          path: `${__dirname}/src/images`,
+        },
     },
     `gatsby-transformer-remark`,
     `gatsby-transformer-sharp`,

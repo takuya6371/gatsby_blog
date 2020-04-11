@@ -12,12 +12,20 @@ import { useStaticQuery, graphql } from "gatsby"
 import Header from "./header"
 import "./layout.css"
 import { makeStyles } from '@material-ui/core/styles';
+import Subheader from "../components/subheader"
+import Image from "../components/image"
 
 const useStyles = makeStyles((theme) => ({
   main: {
-    paddingTop: `130px`,
+    paddingTop: `30px`,
     paddingLeft: `60px`,
     paddingRight: `60px`,
+  },
+  header: {
+    zIndex: `100`,
+  },
+  subheader:{
+    zIndex: `99`,
   },
 }));
 const Layout = ({ children }) => {
@@ -27,6 +35,7 @@ const Layout = ({ children }) => {
       site {
         siteMetadata {
           title
+          subtitle
         }
       }
     }
@@ -37,7 +46,8 @@ console.log(children)
 const classes = useStyles();
   return (
     <>
-      <Header siteTitle={dataTitle.site.siteMetadata.title} />
+      <Header className={classes.header} siteTitle={dataTitle.site.siteMetadata.title} subtitle={dataTitle.site.siteMetadata.subtitle} />
+      <Subheader className={classes.subheader}/>
       <div>
         <main className={classes.main}>{children}</main>
         <footer>

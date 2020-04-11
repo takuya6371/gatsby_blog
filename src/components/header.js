@@ -17,19 +17,24 @@ const useStyles = makeStyles((theme) => ({
     height: 35,
     borderRadius: `25px`,
     float: `right`,
-    marginTop: `10px`,
+    marginTop: `20px`,
   },
   title: {
     float: `left`,
     marginTop: `5px`,
     marginBottom: `0px`,
   },
+  subtitle: {
+    color:`white`,
+  },
   header: {
+    zIndex: `100`,
     // background: `rebeccapurple`,
     marginBottom: `1.45rem`,
     position: `fixed`,
+    display: `flow-root`,
     width: `100%`,
-    height: `60px`,
+    height: `80px`,
     paddingBottom: `0px`,
     //background: `linear-gradient(to right, rgb(0, 65, 106), rgb(121, 159, 12), rgb(255, 224, 0))`,
     background: `linear-gradient(to right, rgb(22, 160, 133), rgb(244, 208, 63))`,
@@ -37,6 +42,8 @@ const useStyles = makeStyles((theme) => ({
   header_dev: {
     paddingLeft: `10px`,
     paddingRight: `10px`,
+    display: `grid`,
+    float: `left`,
   },
   input: {
     marginLeft: theme.spacing(1),
@@ -60,7 +67,7 @@ function search(event, list) {
   //console.log(data)
 }
 
-const Header = ({ siteTitle }) => {
+const Header = ({ siteTitle, subtitle }) => {
 //export default ({ siteTitle, props }) => {
   const classes = useStyles();
 
@@ -100,11 +107,12 @@ console.log(data)
             {siteTitle}
           </Link>
         </h1>
+        <p className={classes.subtitle}>{subtitle}</p>
       </div>
       <Paper component="form" className={classes.search_article}>
           <InputBase
             className={classes.input}
-            placeholder="Please input keyword"
+            placeholder="Not yet activated"
             inputProps={{ 'aria-label': 'search google maps' }}
             onChange={(event) => {search(event, data.allMarkdownRemark.edges)}}
           />
