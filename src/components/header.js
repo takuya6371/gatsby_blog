@@ -68,7 +68,7 @@ console.log(data)
         <p className='subtitle'>{subtitle}</p>
       </div>
       <div className='form_dev'>
-        <span>
+        <p className='serach_p'>
           <Paper component="form" className='search_article search_article_locate'>
             <InputBase
               className='input'
@@ -80,7 +80,7 @@ console.log(data)
               <SearchIcon />
             </IconButton>
           </Paper>
-        </span>
+        </p>
       </div>
     </header>
   )

@@ -40,7 +40,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Subeader = ({props}) => {
+const Subeader = () => {
   const classes = useStyles();
   const data = useStaticQuery(graphql`
   query {
@@ -53,7 +53,6 @@ const Subeader = ({props}) => {
     }
   }
 `)
-console.log(props)
 return(
     <div className={classes.content}>
       <BackgroundImage 
