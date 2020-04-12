@@ -20,7 +20,6 @@ exports.createPages = async gatsbyNodeHelpers => {
       }
     }
   `)
-console.log(result)
   result.data.allMarkdownRemark.edges.forEach(({ node }) => {
     createPage({
       path: node.frontmatter.slug,

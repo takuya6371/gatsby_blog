@@ -22,6 +22,10 @@ function search(event, list) {
     }
   });
   console.log(return_list)
+  this.props.history.push({
+    pathname: "/search",
+   // state: { text: this.state.text }
+});
   //console.log(data)
 }
 
@@ -43,9 +47,8 @@ const Header = ({ siteTitle, subtitle }) => {
     }
   } 
 `)
-const [data, setData] = useState(query);
-console.log(data)
-
+const [search_value, setSearch_value] = useState('');
+const aa = 'jjj'
   return(
     <header
       className='header'
@@ -72,13 +75,16 @@ console.log(data)
           <Paper component="form" className='search_article search_article_locate'>
             <InputBase
               className='input'
+              value={search_value}
               placeholder="Not yet activated"
               inputProps={{ 'aria-label': 'search google maps' }}
-              onChange={(event) => {search(event, data.allMarkdownRemark.edges)}}
+              onChange={(event) => {setSearch_value(event.target.value)}}
             />
+            <Link to='/search' state={{ search_word: search_value }}>
             <IconButton type="" className='iconButton' aria-label="search">
               <SearchIcon />
             </IconButton>
+            </Link>
           </Paper>
         </p>
       </div>

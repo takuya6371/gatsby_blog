@@ -2,7 +2,6 @@
 import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { useStaticQuery, graphql } from "gatsby"
-//import Img from "gatsby-image"
 import BackgroundImage from 'gatsby-background-image'
 import "./layout.css"
 
@@ -13,30 +12,21 @@ const useStyles = makeStyles((theme) => ({
     height: `450px`,
     paddingBottom: `0px`,
     paddingTop: `80px`,
- //   background: `linear-gradient(to right, rgb(237, 229, 116), rgb(225, 245, 196))`,
     background: `linear-gradient(to right, rgb(60, 165, 92), rgb(181, 172, 73)) !important`,
-    display: `grid`,
-  //  opacity: `0.3`,
-    
+    display: `grid`,    
   },
   img: {
     '&::before': {
-//      opacity: `0.3 !important`,
     },
     opacity: `0.3 !important`,
-    //width: `100%`,
     backgroundPosition: `center center`,
     backgroundRepeat: `None`,
     backgroundSize: `cover`,
-    //backgroundPositionY: `center`,
   },
   img_title: {
     textAlign: `center`,
     color: `#cbeccb85`,
- //   marginTop: `50px`,
- //   zIndex:`-10`,
-   fontFamily: `cursive`,
-   //opacity: `0`,
+    fontFamily: `cursive`,
   },
 }));
 
