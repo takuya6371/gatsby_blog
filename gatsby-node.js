@@ -21,7 +21,7 @@ exports.createPages = async gatsbyNodeHelpers => {
     }
   `)
   createPage({
-    path: '/search',
+    path: '/search/',
     matchPath: `/search/*`,
     component: path.resolve(`src/pages/search.js`),
   })
