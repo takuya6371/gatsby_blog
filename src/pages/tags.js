@@ -56,10 +56,7 @@ export default ({location}) => {
     }
   }
 `)
-  console.log(location)
-  console.log(search_word)
   let result = []
-  console.log(search_word)
   query.allMarkdownRemark.edges.map((row) => {
     if (row.node.frontmatter.title.indexOf(search_word) > -1){
       result.push(row)
@@ -71,13 +68,12 @@ export default ({location}) => {
       });
     } 
   })
-console.log(result)
 const article_cnt = result.length
 return (
     <Layout>
       <div className='post_dev'>
         <p>
-          「{search_word}」が含む記事一覧
+          タグ「{search_word}」が含む記事一覧
         </p>
         <p>
           {article_cnt}件
@@ -85,22 +81,22 @@ return (
       </div>
       <div className='contents_dev'>
         {result.map(({ node }) => (
-            <article key={node.frontmatter.slug}　className={classes.article}>
-              <div className={classes.div_list}>
-                <Link to={`/${node.frontmatter.slug}`} className={classes.title}>
-                  <p>{node.frontmatter.title}</p>
-                  <p className={classes.except}>{node.excerpt}</p>
+          <article key={node.frontmatter.slug}　className={classes.article}>
+            <div className={classes.div_list}>
+              <Link to={`/${node.frontmatter.slug}`} className={classes.title}>
+                <p>{node.frontmatter.title}</p>
+                <p className={classes.except}>{node.excerpt}</p>
+              </Link>
+            </div>
+            <time className={classes.time} dateTime={node.frontmatter.date}>{node.frontmatter.date}</time>
+            <p className=''>
+              {Object.values(node.frontmatter.tags).map(tag => (
+                <Link to={`/tags/${tag}`} className='tags_p'>
+                  <span>#{tag}&nbsp;&nbsp;&nbsp;</span>
                 </Link>
-              </div>
-              <time className={classes.time} dateTime={node.frontmatter.date}>{node.frontmatter.date}</time>
-              <p className=''>
-                {Object.values(node.frontmatter.tags).map(tag => (
-                  <Link to={`/tags/${tag}`} className='tags_p'>
-                    <span>#{tag}&nbsp;&nbsp;&nbsp;</span>
-                  </Link>
-                ))}
-              </p>
-            </article>
+              ))}
+            </p>
+          </article>
         ))}
       </div>
   </Layout>

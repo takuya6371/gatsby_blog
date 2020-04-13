@@ -20,6 +20,16 @@ exports.createPages = async gatsbyNodeHelpers => {
       }
     }
   `)
+  createPage({
+    path: '/search',
+    matchPath: `/search/*`,
+    component: path.resolve(`src/pages/search.js`),
+  })
+  createPage({
+    path: '/tags/${keyword}',
+    matchPath: `/tags/*`,
+    component: path.resolve(`src/pages/tags.js`),
+  })
   result.data.allMarkdownRemark.edges.forEach(({ node }) => {
     createPage({
       path: node.frontmatter.slug,

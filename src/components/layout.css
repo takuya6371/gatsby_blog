@@ -669,9 +669,12 @@ pre tt:after {
 .contents_dev {
   margin-right: 20%;
   padding-top: 20px;
+  padding-left: 20px;
+
 }
 .post_dev {
   padding-top: 90px;
+  padding-left: 20px;
 }
 .post_title_dev {
   display: grid;
@@ -680,6 +683,15 @@ pre tt:after {
 .post_title_p {
   font-size: 35px;
   margin-bottom: 25px;
+}
+
+.tags_p  {
+  color: green;
+  font-size: 18px;
+  text-decoration: none;
+}
+.tags_p:hover  {
+  background-color: #cbeccb;
 }
 
 @media only screen and (max-width: 710px) {

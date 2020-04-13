@@ -23,7 +23,7 @@ function search(event, list) {
   });
   console.log(return_list)
   this.props.history.push({
-    pathname: "/search",
+    pathname: "/search/${}",
    // state: { text: this.state.text }
 });
   //console.log(data)
@@ -76,11 +76,11 @@ const aa = 'jjj'
             <InputBase
               className='input'
               value={search_value}
-              placeholder="Not yet activated"
-              inputProps={{ 'aria-label': 'search google maps' }}
+              placeholder="Keyword in title or tag"
+      //        inputProps={{ 'aria-label': 'search google maps' }}
               onChange={(event) => {setSearch_value(event.target.value)}}
             />
-            <Link to='/search' state={{ search_word: search_value }}>
+            <Link to={'/search/'+search_value} >
             <IconButton type="" className='iconButton' aria-label="search">
               <SearchIcon />
             </IconButton>

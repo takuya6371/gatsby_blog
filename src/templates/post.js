@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import Layout from "../components/layout"
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -24,6 +24,13 @@ export default ({ data }) => {
   return (
     <Layout>
       <div className='contents_dev post_dev'>
+        <p className=''>
+            {Object.values(post.frontmatter.tags).map(tag => (
+              <Link to={`/tags/${tag}`} className='tags_p'>
+                <span>#{tag}&nbsp;&nbsp;&nbsp;</span>
+              </Link>
+            ))}
+        </p>
         <div className='post_title_dev'>
           <h1 className='post_title_p'>{post.frontmatter.title}</h1><br></br>
         </div>
@@ -39,6 +46,7 @@ export const query = graphql`
       html
       frontmatter {
         title
+        tags
       }
     }
   }

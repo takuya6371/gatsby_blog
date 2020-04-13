@@ -16,7 +16,7 @@ import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles((theme) => ({
   main: {
  //   paddingTop: `30px`,
- //   paddingLeft: `60px`,
+ //   paddingLeft: `20px`,
  //   paddingRight: `60px`,
   },
   header: {
