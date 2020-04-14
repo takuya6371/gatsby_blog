@@ -694,6 +694,12 @@ pre tt:after {
   background-color: #cbeccb;
 }
 
+.disabled-link {
+  pointer-events: none;
+}
+.enabled-link {
+  pointer-events: fill;
+}
 @media only screen and (max-width: 710px) {
   .header {
     z-index: 100;

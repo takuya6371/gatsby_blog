@@ -1,6 +1,6 @@
 
 import { Link, graphql, useStaticQuery } from "gatsby"
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import InputBase from '@material-ui/core/InputBase';
@@ -10,29 +10,22 @@ import PropTypes from "prop-types"
 import "./layout.css"
 
 const useStyles = makeStyles((theme) => ({
+
 }));
 
-function search(event, list) {
-  let return_list = []
-  //console.log(event.target.value);
-  //console.log(list);
-  list.forEach(item => {
-    if(item.node.frontmatter.title.indexOf(event.target.value) > -1){
-      return_list.push(item.node.frontmatter);
-    }
-  });
-  console.log(return_list)
-  this.props.history.push({
-    pathname: "/search/${}",
-   // state: { text: this.state.text }
-});
-  //console.log(data)
+function searchChange(inputValue) {
+  this.state.setSearchValue(inputValue)
+
+
 }
 
 const Header = ({ siteTitle, subtitle }) => {
 //export default ({ siteTitle, props }) => {
   const classes = useStyles();
-
+  useEffect(() => {
+    console.log('Use effect')
+  })
+  console.log('nomal')
   const query = useStaticQuery(graphql`
   query {
     allMarkdownRemark (sort: { fields: [frontmatter___date], order: DESC }) {
@@ -47,8 +40,8 @@ const Header = ({ siteTitle, subtitle }) => {
     }
   } 
 `)
-const [search_value, setSearch_value] = useState('');
-const aa = 'jjj'
+const [searchValue, setSearchValue] = useState('');
+//const [buttonStyle, setBottonStyle] = useState('disableink');
   return(
     <header
       className='header'
@@ -75,14 +68,14 @@ const aa = 'jjj'
           <Paper component="form" className='search_article search_article_locate'>
             <InputBase
               className='input'
-              value={search_value}
+              value={searchValue}
               placeholder="Keyword in title or tag"
       //        inputProps={{ 'aria-label': 'search google maps' }}
-              onChange={(event) => {setSearch_value(event.target.value)}}
+              onChange={(event) => {setSearchValue(event.target.value)}}
             />
-            <Link to={'/search/'+search_value} >
+            <Link to={'/search/'+searchValue} className={searchValue === '' ? 'disabled-link' : 'eabled-link' } >
             <IconButton type="" className='iconButton' aria-label="search">
-              <SearchIcon />
+              <SearchIcon/>
             </IconButton>
             </Link>
           </Paper>
