@@ -1,4 +1,7 @@
 Gatsbyでのブログサイトのお試し制作
+【公開先】
+https://kind-brahmagupta-816cd3.netlify.app/
+
 
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
