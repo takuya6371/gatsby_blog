@@ -11,3 +11,13 @@ updates:
       interval: "daily"
       time: "23:55"
       timezone: "Asia/Tokyo"
+    groups:
+      dev-dependency:
+        dependency-type: "development"
+        update-types:
+          - "minor"
+          - "patch"
+        dependency-type: "production"
+        update-types:
+          - "minor"
+          - "patch"
