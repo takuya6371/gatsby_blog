@@ -9,7 +9,7 @@ updates:
     directory: "/" # Location of package manifests
     schedule:
       interval: "daily"
-      time: "11:44"
+      time: "12:15"
       timezone: "Asia/Tokyo"
     groups:
       #dev-minor-patch-dependency-for-auto-marge:
