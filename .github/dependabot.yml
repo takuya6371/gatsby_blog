@@ -9,9 +9,8 @@ updates:
     directory: "/" # Location of package manifests
     schedule:
       interval: "daily"
-      time: "10:53"
+      time: "11:25"
       timezone: "Asia/Tokyo"
-    open-pull-requests-limit: 4
     groups:
       dev-minor-patch-dependency-for-auto-marge:
         dependency-type: "development"
