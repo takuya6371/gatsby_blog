@@ -17,7 +17,7 @@ updates:
         update-types:
           - "minor"
           - "patch"
-     prod-dependency:
+      prod-dependency:
         dependency-type: "production"
         update-types:
           - "minor"
