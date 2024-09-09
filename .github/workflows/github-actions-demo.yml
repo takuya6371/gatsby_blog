@@ -15,7 +15,7 @@ jobs:
         with:
           github-token: "${{ secrets.GITHUB_TOKEN }}"
       - name: Approve && Merge a PR
-        if: contains(steps.metadata.outputs.dependency-names, 'auto-marge')      
+        if: contains(github.event.pull_request.title, 'auto-marge')      
         run: |
           gh pr review --approve "$PR_URL"
           gh pr merge --auto --merge "$PR_URL"
