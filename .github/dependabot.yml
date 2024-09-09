@@ -21,12 +21,12 @@ updates:
         dependency-type: "production"
         update-types:
           - "patch"
-      #dev-major-dependency:
-      #  dependency-type: "development"
-      #  update-types:
-      #    - "major"
-      #prod-major-minor-dependency:
-      #  dependency-type: "production"
-      #  update-types:
-      #    - "major"
-      #    - "minor"
+      dev-major-dependency:
+        dependency-type: "development"
+        update-types:
+          - "major"
+      prod-major-minor-dependency:
+        dependency-type: "production"
+        update-types:
+          - "major"
+          - "minor"
