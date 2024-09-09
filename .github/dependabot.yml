@@ -9,18 +9,18 @@ updates:
     directory: "/" # Location of package manifests
     schedule:
       interval: "daily"
-      time: "17:01"
+      time: "17:20"
       timezone: "Asia/Tokyo"
     groups:
-      dev-major-dependency:
-        dependency-type: "development"
-        update-types:
-          - "major"
-      prod-major-minor-dependency:
-        dependency-type: "production"
-        update-types:
-          - "major"
-          - "minor"
+      #dev-major-dependency:
+      #  dependency-type: "development"
+      #  update-types:
+      #    - "major"
+      #prod-major-minor-dependency:
+      #  dependency-type: "production"
+      #  update-types:
+      #    - "major"
+      #    - "minor"
       dev-minor-patch-dependency-for-auto-marge:
         dependency-type: "development"
         update-types:
