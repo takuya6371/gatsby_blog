@@ -22,7 +22,6 @@ updates:
         dependency-type: "production"
         update-types:
           - "patch"
-
       dev-major-dependency:
         dependency-type: "development"
         update-types:
