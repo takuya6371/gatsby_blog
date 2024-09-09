@@ -9,7 +9,7 @@ updates:
     directory: "/" # Location of package manifests
     schedule:
       interval: "daily"
-      time: "19:17"
+      time: "21:14"
       timezone: "Asia/Tokyo"
     groups:
       #dev-major-dependency:
