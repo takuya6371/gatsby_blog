@@ -9,7 +9,7 @@ updates:
     directory: "/" # Location of package manifests
     schedule:
       interval: "daily"
-      time: "12:25"
+      time: "16:24"
       timezone: "Asia/Tokyo"
     groups:
       dev-major-dependency:
@@ -21,19 +21,4 @@ updates:
         update-types:
           - "major"
           - "minor"
-  - package-ecosystem: "npm" # See documentation for possible values
-    directory: "/api" # Location of package manifests
-    schedule:
-      interval: "daily"
-      time: "12:25"
-      timezone: "Asia/Tokyo"
-    groups:
-      dev-major-dependency:
-        dependency-type: "development"
-        update-types:
-          - "major"
-      prod-major-minor-dependency:
-        dependency-type: "production"
-        update-types:
-          - "major"
-          - "minor"
+
