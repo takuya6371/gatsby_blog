@@ -26,6 +26,9 @@ updates:
         update-types:
           - "minor"
           - "patch"
+        dependency-type: "production"
+        update-types:
+          - "patch"
       prod-patch-dependency-auto-marge:
         dependency-type: "production"
         update-types:
